@@ -24,7 +24,6 @@ public class TpfinalApplication {
 
     private void insertPage() {
         Page page1 = Page.builder()
-                .id("1A")
                 .title("Explorando la Patagonia Argentina")
                 .text("Descubre la belleza natural y la rica cultura de la Patagonia Argentina...")
                 .author("Daiana Alonso")
@@ -116,8 +115,8 @@ public class TpfinalApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            //insertPage();
-            // insertPost();
+            //  insertPage();
+            //  insertPost();
         };
     }
 }

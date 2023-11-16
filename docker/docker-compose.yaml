@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  raven_data:
+
+services:
+  ravendb:
+    image: ravendb/ravendb
+    environment:
+      - RAVEN_Setup_Mode=Initial
+      - RAVEN_DATA_DIR=/data
+      - RAVEN_DISABLE_SECURITY=true
+      - RAVEN_Security_UnsecuredAccessAllowed=PublicNetwork
+      - RAVEN_PublicServerUrl=http://localhost:8081
+    ports:
+      - "8081:8080"
+      - "38888:38888"
+    volumes:
+      - raven_data:/data

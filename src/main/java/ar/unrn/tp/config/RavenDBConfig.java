@@ -15,9 +15,9 @@ public class RavenDBConfig {
 
     @PostConstruct
     public void initialize() {
-        store = new DocumentStore("http://127.0.0.1:8081", "blog");
+        store = new DocumentStore("http://localhost:8081", "blog");
         store.initialize();
-        /*try {
+       /* try {
             DatabaseRecord databaseRecord = new DatabaseRecord();
             databaseRecord.setDatabaseName("blog");
             store.maintenance().server().send(new CreateDatabaseOperation(databaseRecord));
