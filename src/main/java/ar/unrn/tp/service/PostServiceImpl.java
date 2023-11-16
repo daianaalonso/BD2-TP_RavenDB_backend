@@ -3,6 +3,7 @@ package ar.unrn.tp.service;
 import ar.unrn.tp.api.PostService;
 import ar.unrn.tp.controller.request.AuthorCount;
 import ar.unrn.tp.domain.Post;
+import ar.unrn.tp.service.index.PostTextIndex;
 import lombok.AllArgsConstructor;
 import net.ravendb.client.documents.IDocumentStore;
 import net.ravendb.client.documents.session.IDocumentSession;
@@ -54,7 +55,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> findPostsByText(String text) {
-        return inTx(session -> session.query(Post.class)
+        return inTx(session -> session.query(Post.class, PostTextIndex.class)
                 .search("text", text)
                 .selectFields(Post.class, "id", "title", "resume", "author")
                 .toList()

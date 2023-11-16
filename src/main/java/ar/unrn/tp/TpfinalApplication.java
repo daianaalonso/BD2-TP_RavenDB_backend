@@ -90,12 +90,23 @@ public class TpfinalApplication {
                 .date(LocalDate.now().minusDays(1))
                 .build();
 
+        Post post7 = Post.builder()
+                .title("Cruce de los Lagos Andinos: Una Travesía Inolvidable")
+                .text("Embárcate en una travesía inolvidable a través de los Lagos Andinos, donde la serenidad de las aguas se encuentra con la emocionante aventura. Una experiencia que quedará grabada en tu memoria.")
+                .resume("Embárcate en un viaje épico a través de los impresionantes Lagos Andinos, donde la aventura se encuentra con la serenidad de la naturaleza.")
+                .tags(Arrays.asList("Lagos Andinos", "Aventura", "Naturaleza"))
+                .relatedLinks(Arrays.asList("link1.com", "link2.com"))
+                .author("Daiana Alonso")
+                .date(LocalDate.now().minusDays(12))
+                .build();
+
         postService.insertPost(post1);
         postService.insertPost(post2);
         postService.insertPost(post3);
         postService.insertPost(post4);
         postService.insertPost(post5);
         postService.insertPost(post6);
+        postService.insertPost(post7);
     }
 
     public static void main(String[] args) {
@@ -107,17 +118,6 @@ public class TpfinalApplication {
         return args -> {
             //insertPage();
             // insertPost();
-            Post post6 = Post.builder()
-                    .title("Cruce de los Lagos Andinos: Una Travesía Inolvidable")
-                    .text("Embárcate en una travesía inolvidable a través de los Lagos Andinos, donde la serenidad de las aguas se encuentra con la emocionante aventura. Una experiencia que quedará grabada en tu memoria.")
-                    .resume("Embárcate en un viaje épico a través de los impresionantes Lagos Andinos, donde la aventura se encuentra con la serenidad de la naturaleza.")
-                    .tags(Arrays.asList("Lagos Andinos", "Aventura", "Naturaleza"))
-                    .relatedLinks(Arrays.asList("link1.com", "link2.com"))
-                    .author("Daiana Alonso")
-                    .date(LocalDate.now().minusDays(12))
-                    .build();
-
-            postService.insertPost(post6);
         };
     }
 }
