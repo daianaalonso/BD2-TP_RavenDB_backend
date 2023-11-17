@@ -2,7 +2,6 @@ package ar.unrn.tp.domain;
 
 import lombok.*;
 
-import java.lang.annotation.Documented;
 import java.time.LocalDate;
 import java.util.List;
 
